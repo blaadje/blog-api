@@ -13,7 +13,17 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        //
+      Schema::create('comments', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('username');
+        $table->string('email');
+        $table->longText('content');
+        $table->integer('commentable_id');
+        $table->integer('commentable_type');
+        $table->integer('reply')->default(0);
+        $table->string('ip');
+        $table->timestamps();
+      })
     }
 
     /**
@@ -23,6 +33,6 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        //
+      Schema::drop('comments')
     }
 }
