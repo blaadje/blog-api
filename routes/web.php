@@ -17,5 +17,7 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['web']], function () {
   Route::resource('comments', 'CommentsController');
+  Route::resource('posts', 'PostController');
 });
+
 
