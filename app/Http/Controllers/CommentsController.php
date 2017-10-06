@@ -26,7 +26,7 @@ class CommentsController extends Controller
       ]);
       return \Illuminate\Support\Facades\Response::json($comment, 200, [], JSON_NUMERIC_CHECK);
     } else {
-      return \Illuminate\Support\Facades\Response::json("Ce contenu c'est pas commentable", 422);
+      return \Illuminate\Support\Facades\Response::json("Ce contenu n'est pas commentable", 422);
     }
   }
 
